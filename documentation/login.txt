@@ -2,7 +2,7 @@ url: api/login
 
 method: get
 
-data:
+received_data:
         {
         title = 'AGRO'
         }
@@ -28,8 +28,7 @@ data:
 
 method: post
 
-data:
-
+sent_data:
 {
     перевый ключ в примере login: значение          |login: user
     второй ключ в примере password: значение        |password: 123456
