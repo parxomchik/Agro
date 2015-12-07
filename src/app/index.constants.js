@@ -4,8 +4,14 @@
 
   angular
     .module('agro')
-    .constant('malarkey', malarkey)
-    .constant('toastr', toastr)
-    .constant('moment', moment);
-
+    .constant("restConfig", {
+        //"url": "http://local.ua"
+        "url": "http://localhost:3000/"
+        //"url": "http://vybory.epicentr.net.ua"
+        //"port": "8081"
+     })
+    .constant("loginConfig", {
+        "url": "http://crm.epicentr.com/api/login/",
+        "port": "8081"
+    });
 })();

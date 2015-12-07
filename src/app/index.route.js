@@ -6,16 +6,18 @@
     .config(routeConfig);
 
   /** @ngInject */
-  function routeConfig($stateProvider, $urlRouterProvider) {
+  function routeConfig($stateProvider, $urlRouterProvider,$logProvider) {
     $stateProvider
-      .state('home', {
+        .state('login', {
         url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+        templateUrl: 'app/login/login.html',
+        controller: 'loginController',
+        controllerAs: 'login'
       });
 
-    $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/');
+      $logProvider.debugEnabled(false);
+
   }
 
 })();
