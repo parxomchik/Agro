@@ -1,0 +1,36 @@
+url: api/login
+
+method: get
+
+data:
+        {
+        title = 'AGRO'
+        }
+      {
+        key: 'login',
+        type: 'input',
+        templateOptions: {
+          type: 'text',
+          label: 'Login',
+          placeholder: 'Enter login'
+        }
+      },
+      {
+        key: 'password',
+        type: 'input',
+        templateOptions: {
+          type: 'password',
+          label: 'Password',
+          placeholder: 'Password'
+        }
+      }
+
+
+method: post
+
+data:
+
+{
+    перевый ключ в примере login: значение          |login: user
+    второй ключ в примере password: значение        |password: 123456
+}

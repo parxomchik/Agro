@@ -28,7 +28,7 @@
 
 
       $urlRouterProvider.otherwise('/');
-      $logProvider.debugEnabled(false);
+      $logProvider.debugEnabled(true);
 
   }
 })();

@@ -8,14 +8,17 @@
     /** @ngInject */
     function loginFactory($http,$cookies,restConfig){
         return {
+            getLogin: function (data) {
+                return $http({
+                    method: 'GET',
+                    url: restConfig.url+'api/login'
+                })
+            },
             sendLogin: function (data) {
                 return $http({
                     method: 'POST',
                     url: restConfig.url+'api/login',
-                    data: {
-                        username:  data.username,
-                        password:  data.password
-                    }
+                    data: data
                 })
             },
             userStatus: function ($state,$q) {
