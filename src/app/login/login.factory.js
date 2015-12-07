@@ -11,16 +11,19 @@
             sendLogin: function (data) {
                 return $http({
                     method: 'POST',
-                    url: restConfig.url+'/api/login',
-                    data: $.param({
+                    url: restConfig.url+'api/login',
+                    data: {
                         username:  data.username,
                         password:  data.password
-                    }),
-                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                    }
                 })
-
-
+            },
+            userStatus: function ($state,$q) {
+                var cookie =  $cookies.getObject('session_id');
+                $log.debug(cookie);
+                return cookie;
             }
-        };
+        }
+
     }
 })();

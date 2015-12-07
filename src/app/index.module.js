@@ -2,6 +2,17 @@
   'use strict';
 
   angular
-    .module('agro', ['ngAnimate', 'ngCookies', 'ngSanitize', 'ngResource', 'ui.router', 'mgcrea.ngStrap']);
+    .module('agro',
+    [
+      'ngAnimate',
+      'ngCookies',
+      'ngSanitize',
+      'ngResource',
+      'ui.router',
+      'formly',
+      'formlyBootstrap',
+      'mgcrea.ngStrap'
+    ]
+    );
 
 })();

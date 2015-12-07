@@ -8,7 +8,7 @@
                      <div class="tab-pane active">
                          <img class="profile-img" src="assets/images/login/epic.png" alt="">
                          <h3 class="text-center">VUBORU MONITORING</h3>
-                         <alert ng-repeat="alert in login.alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+                         <!--<alert ng-repeat="alert in login.alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>-->
                          <!--<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>-->
                          <form class="form-signin" ng-submit="login.loginSubmit(username,password)">
 
@@ -16,6 +16,11 @@
                              <input  type="password" class="form-control" placeholder="Password" ng-model="login.password" required>
                              <button id="submit" class="btn btn-lg btn-default btn-block" >Войти</button>
                          </form>
+                        <div class="form-signin">
+                         <formly-form class="form-signin" model="login.user" fields="login.userFields">
+                             <button id="submit" class="btn btn-lg btn-default btn-block" >Войти</button>
+                         </formly-form>
+                        </div>
                      </div>
                  </div>
              </div>
