@@ -2,7 +2,8 @@
   'use strict';
 
   angular
-    .module('agro',
+    .module(
+        'agro',
     [
       'ngAnimate',
       'ngCookies',
@@ -11,8 +12,7 @@
       'ui.router',
       'formly',
       'formlyBootstrap',
+      'ngTable',
       'mgcrea.ngStrap'
-    ]
-    );
-
+    ]);
 })();

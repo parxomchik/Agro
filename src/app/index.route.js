@@ -25,9 +25,15 @@
                 }
             }
         })
+        .state('plat', {
+            url: '/plat',
+            templateUrl: 'app/plat/plat.html',
+            controller: 'platController',
+            controllerAs: 'plot'
+            //parent: "client"
+        })
 
-
-      $urlRouterProvider.otherwise('/');
+      //$urlRouterProvider.otherwise('/');
       $logProvider.debugEnabled(true);
 
   }
