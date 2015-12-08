@@ -10,6 +10,12 @@ function platController($log,platFactory,NgTableParams) {
 
     $log.debug("platController start");
     var self = this;
+    platFactory.getPlat()
+        .success(function (data, status) {
+            $log.debug('platFactory.getPlat() success = '+angular.toJson(data));
+
+        });
+
     var data = [
         {
             cadastrNumber: 111,
