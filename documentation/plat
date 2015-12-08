@@ -1,0 +1,33 @@
+url: api/plat
+
+received_data:
+{
+
+        {
+            cadastrNumber: 111,
+            area: 123,
+            propertyLaw: "Moroni",
+            dateOfRegistration: "Moroni",
+            reason: "Moroni",
+            propertyOfPropertyLaw: "Moroni",
+            personOfPropertyLaw: "Moroni",
+        },
+        {
+            cadastrNumber: 111,
+            area: 123,
+            propertyLaw: "Moroni",
+            dateOfRegistration: "Moroni",
+            reason: "Moroni",
+            propertyOfPropertyLaw: "Moroni",
+            personOfPropertyLaw: "Moroni",
+        },
+        {
+            cadastrNumber: 111,
+            area: 123,
+            propertyLaw: "Moroni",
+            dateOfRegistration: "Moroni",
+            reason: "Moroni",
+            propertyOfPropertyLaw: "Moroni",
+            personOfPropertyLaw: "Moroni",
+        },
+}

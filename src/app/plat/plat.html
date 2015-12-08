@@ -1,10 +1,42 @@
-<table ng-table="plot.tableParams" class="table" show-filter="true">
-    <tr ng-repeat="user in $data">
-        <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
-            {{user.name}}
-        </td>
-        <td title="'Age'" filter="{ age: 'number'}" sortable="'age'">
-            {{user.age}}
-        </td>
-    </tr>
-</table>
+<acme-navbar></acme-navbar>
+<div class="container-fluid">
+    <table ng-table="plot.tableParams" class="table" show-filter="true">
+        <tr ng-repeat="user in $data">
+
+            <td title="'Кадастровий №'" filter="{ cadastrNumber: 'number'}" sortable="'cadastrNumber'">
+                {{user.cadastrNumber}}
+            </td>
+
+            <td title="'Площа'" filter="{ area: 'number'}" sortable="'area'">
+                {{user.area}}
+            </td>
+
+            <td title="'Речове право №'" filter="{ propertyLaw: 'text'}" sortable="'propertyLaw'">
+                {{user.propertyLaw}}
+            </td>
+
+            <td title="'Дата регістрації'" filter="{ dateOfRegistration: 'text'}" sortable="'dateOfRegistration'">
+                {{user.dateOfRegistration}}
+            </td>
+
+            <!--<td title="'Age'" filter="{ age: 'number'}" sortable="'age'">-->
+                <!--{{user.age}}-->
+            <!--</td>-->
+
+            <td title="'Підстава'" filter="{ reason: 'text'}" sortable="'reason'">
+                {{user.reason}}
+            </td>
+
+            <td title="'Характеристики реч. права'" filter="{ age: 'text'}" sortable="'propertyOfPropertyLaw'">
+                {{user.propertyOfPropertyLaw}}
+            </td>
+
+            <td title="'Субєкт реч. права'" filter="{ personOfPropertyLaw: 'text'}" sortable="'personOfPropertyLaw'">
+                {{user.personOfPropertyLaw}}
+            </td>
+
+        </tr>
+    </table>
+
+
+</div>
