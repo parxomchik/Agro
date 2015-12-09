@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title> Ajax</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+</head>
+<body>
+
+<script>
+
+    function sendLogin()
+    {
+        var mdata = {
+            "data": { login: "user", "password": "111" }
+        };
+
+        // var mdata = { "data": {"BirthDay":"2015-12-07 00:00:00","CarIsSelected":{"val":0},"Email":"tkachuk22@epicentrk.com.ua","EmailIsSelected":{"val":0},"FirstName":"Дмитро","FlatNumber":101,"Hobbes":[{"isSelected":false,"label":"Рибальство","name":1},{"isSelected":false,"label":"Полювання","name":2},{"isSelected":false,"label":"Майстрування","name":3},{"isSelected":false,"label":"Рукоділля","name":4},{"isSelected":false,"label":"Садівництво","name":5},{"isSelected":false,"label":"Спорт","name":6},{"isSelected":false,"label":"Декор інтер'єрів","name":7}],"HobbyOther":"","HomePhoneNumber":"385454545454","HouseNumber":"100","Kids":[{"id":0,"name":"213"}],"LastName":"Ткачук2122","MobilePhoneNumber":"380961565453","PetOther":"","Pets":[{"isSelected":false,"label":"Пес","name":"dog"},{"isSelected":false,"label":"Кіт","name":"cat"},{"isSelected":false,"label":"Птах","name":"bird"},{"isSelected":false,"label":"Рибки","name":"fish"}],"PolicyIsSelected":true,"SmsIsSelected":{"val":0},"Street":"Шевченка","SurName":"Валерійович","ZipCode":33014,"selectedArea":{"AreaId":9909,"AreaName":"Вінницька область"},"selectedCity":{"CityId":70300007365,"CityName":""},"selectedGender":{"GenderID":1,"GenderName":"Чоловічий"},"selectedMaritalStatus":{"MaritalStatusID":2,"MaritalStatusName":"Розлучений(а)"},"selectedRegion":{"RegionId":90000001031,"RegionName":"Погребищенський"},"KidsIsSelected":"1"}  };
+
+        $.ajax({ type: "POST", url: "/api/login", data: mdata.data, contentType: "application/x-www-form-urlencoded; charset=utf-8", dataType: 'json' });
+
+    }
+
+    function sendLogin2()
+    {
+        var mdata = {
+            "data": { login: "wolf", "password": "wolf2" }
+        };
+
+        // var mdata = { "data": {"BirthDay":"2015-12-07 00:00:00","CarIsSelected":{"val":0},"Email":"tkachuk22@epicentrk.com.ua","EmailIsSelected":{"val":0},"FirstName":"Дмитро","FlatNumber":101,"Hobbes":[{"isSelected":false,"label":"Рибальство","name":1},{"isSelected":false,"label":"Полювання","name":2},{"isSelected":false,"label":"Майстрування","name":3},{"isSelected":false,"label":"Рукоділля","name":4},{"isSelected":false,"label":"Садівництво","name":5},{"isSelected":false,"label":"Спорт","name":6},{"isSelected":false,"label":"Декор інтер'єрів","name":7}],"HobbyOther":"","HomePhoneNumber":"385454545454","HouseNumber":"100","Kids":[{"id":0,"name":"213"}],"LastName":"Ткачук2122","MobilePhoneNumber":"380961565453","PetOther":"","Pets":[{"isSelected":false,"label":"Пес","name":"dog"},{"isSelected":false,"label":"Кіт","name":"cat"},{"isSelected":false,"label":"Птах","name":"bird"},{"isSelected":false,"label":"Рибки","name":"fish"}],"PolicyIsSelected":true,"SmsIsSelected":{"val":0},"Street":"Шевченка","SurName":"Валерійович","ZipCode":33014,"selectedArea":{"AreaId":9909,"AreaName":"Вінницька область"},"selectedCity":{"CityId":70300007365,"CityName":""},"selectedGender":{"GenderID":1,"GenderName":"Чоловічий"},"selectedMaritalStatus":{"MaritalStatusID":2,"MaritalStatusName":"Розлучений(а)"},"selectedRegion":{"RegionId":90000001031,"RegionName":"Погребищенський"},"KidsIsSelected":"1"}  };
+
+        $.ajax({ type: "POST", url: "/api/login", data: mdata.data, contentType: "application/x-www-form-urlencoded; charset=utf-8", dataType: 'json' });
+
+    }
+
+</script>
+
+<form method="post">
+
+    <input type="button" value="Send bad!" onclick="sendLogin()" />
+    <input type="button" value="Send good!" onclick="sendLogin2()"/>
+
+</form>
+
+
+</body>
+</html>
