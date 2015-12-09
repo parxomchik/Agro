@@ -6,7 +6,7 @@ angular
     .controller('platController', platController);
 
 /** @ngInject */
-function platController($log,platFactory,NgTableParams,ngTableParams,$scope,$http) {
+function platController($log,platFactory,NgTableParams,ngTableParams,$scope,$filter) {
 
     $log.debug("platController start");
     var self = this;
@@ -37,17 +37,35 @@ function platController($log,platFactory,NgTableParams,ngTableParams,$scope,$htt
 
         self.tableParams = new ngTableParams({
             page: 1,            // show first page
-            count: 10           // count per page
+            //count: 10,          // count per page
+            //count: 10,
+            sorting: {
+                name: ''     // initial sorting
+            },
+
         }, {
             total: data.length, // length of data
-            getData: function($defer, params) {
-                //params.total();
-                $defer.resolve(data.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-                //$defer.resolve($scope.dataset.slice((params.page() - 1) * params.count(), params.page() * params.count()));
 
+            getData: function($defer, params) {
+
+                //params.total();
+                //$defer.resolve(data.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+
+
+                $log.debug('data = '+angular.toJson(data));
+
+                var filteredData = params.filter() ? $filter('filter')(data, params.filter()) : data;
+                $log.debug('filteredData = '+angular.toJson(filteredData));
+                var orderedData = params.sorting() ? $filter('orderBy')(filteredData, params.orderBy()) : filteredData;
+                params.total(filteredData.length);
+                //params.count(filteredData.length);
+                $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
             }
         });
-    });
+            self.tableParams.reload();
+
+
+        });
 
 
     //$http.get("data.json").success(function(result){
