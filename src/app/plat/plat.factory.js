@@ -14,7 +14,7 @@
                 return $http({
                     method: 'GET',
                     //url: restConfig.url+'plat',
-                    url: 'app/plat/data.json',
+                    url: 'app/plat/data2.json',
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                     data: {
                       session_id: $cookies.getObject('session_id')
