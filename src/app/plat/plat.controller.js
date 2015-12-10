@@ -9,138 +9,47 @@ angular
 function platController($log,platFactory,NgTableParams,ngTableParams,$scope,$filter) {
 
     $log.debug("platController start");
-    var self = this;
+    var vm = this;
     var data = [];
-    //platFactory.getPlat()
-    //    .success(function (result, status) {
-    //        $log.debug('platFactory.getPlat() success = '+angular.toJson(result));
-    //        data = result;
-    //        $log.debug('data success = '+angular.toJson(data));
-    //        self.tableParams = new NgTableParams({
-    //            page: 1,            // show first page
-    //            count: 10           // count per page
-    //        }, {
-    //            total: data.length, // length of data
-    //            getData: function($defer, params) {
-    //                //params.total();
-    //                $defer.resolve(data.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-    //                //$defer.resolve($scope.dataset.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-    //            }
-    //        });
-    //    });
-    //$http.get("app/plat/data2.json").success(function(result){
+    vm.showPtals = function(ptalsData){
+        var res = [];
+        $log.debug('showPtals = '+angular.toJson(ptalsData));
+        angular.forEach(ptalsData,function(value1, key1){
+            $log.debug('value = '+angular.toJson(value1),'key ='+key1);
+            angular.forEach(value1, function (value2, key2) {
+                $log.debug('value2 = '+angular.toJson(value2),'key2 ='+key2);
+                if(key2 == 'isSelected' &&  value2 == true){
+                    $log.debug('ok');
+                    $log.debug(value1);
+                    res.push(value1);
+                }
+            })
+        });
+        $log.debug('res = '+angular.toJson(res));
+    };
+
     platFactory.getPlat()
         .success(function (result, status) {
-
-        //$scope.dataset = data;
-        data = result;
-
-        self.tableParams = new ngTableParams({
+            data = result;
+            vm.tableParams = new ngTableParams({
             page: 1,            // show first page
-            //count: 10,          // count per page
-            //count: 10,
             sorting: {
                 name: ''     // initial sorting
-            },
-
-        }, {
+            }
+            },{
+            counts: [5, 10, 20],
             total: data.length, // length of data
 
             getData: function($defer, params) {
-
-                //params.total();
-                //$defer.resolve(data.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-
-
-                $log.debug('data = '+angular.toJson(data));
-
                 var filteredData = params.filter() ? $filter('filter')(data, params.filter()) : data;
                 $log.debug('filteredData = '+angular.toJson(filteredData));
                 var orderedData = params.sorting() ? $filter('orderBy')(filteredData, params.orderBy()) : filteredData;
                 params.total(filteredData.length);
-                //params.count(filteredData.length);
                 $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
             }
         });
-            self.tableParams.reload();
-
-
+            vm.tableParams.reload();
         });
 
-
-    //$http.get("data.json").success(function(result){
-    //    //$scope.dataset = data;
-    //    data = result;
-    //
-    //    self.tableParams = new NgTableParams({
-    //        page: 1,            // show first page
-    //        count: 10           // count per page
-    //    }, {
-    //        total: data.length, // length of data
-    //        getData: function($defer, params) {
-    //            //params.total();
-    //            $defer.resolve(data.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-    //            //$defer.resolve($scope.dataset.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-    //        }
-    //    });
-    //});
-
-
-
-    //var data = [
-    //    {
-    //        cadastrNumber: 111,
-    //        area: 121,
-    //        propertyLaw: "Moroni",
-    //        dateOfRegistration: "Moroni",
-    //        reason: "Moroni",
-    //        propertyOfPropertyLaw: "Moroni",
-    //        personOfPropertyLaw: "Moroni",
-    //    },
-    //    {
-    //        cadastrNumber: 111,
-    //        area: 122,
-    //        propertyLaw: "Moroni",
-    //        dateOfRegistration: "Moroni",
-    //        reason: "Moroni",
-    //        propertyOfPropertyLaw: "Moroni",
-    //        personOfPropertyLaw: "Moroni",
-    //    },
-    //    {
-    //        cadastrNumber: 111,
-    //        area: 123,
-    //        propertyLaw: "Moroni",
-    //        dateOfRegistration: "Moroni",
-    //        reason: "Moroni",
-    //        propertyOfPropertyLaw: "Moroni",
-    //        personOfPropertyLaw: "Moroni",
-    //    }
-    //];
-    //var Api = $resource("app/plat/data.json");
-    //this.tableParams = new NgTableParams({
-    //    page: 1,            // show first page
-    //    count: 10          // count per page
-    //}, {
-    //    getData: function(params) {
-    //        // ajax request to api
-    //        return Api.get(params.url())
-    //            .$promise.then(function(data) {
-    //                $log.debug(data);
-    //                $log.debug('data.result = '+data.results);
-    //            params.total(data.inlineCount); // recal. page nav controls
-    //                $log.debug(data.inlineCount);
-    //            return data.results;
-    //        });
-    //    }
-    //});
-
-
-//    self.tableParams = new NgTableParams(
-//        //{ count: 5},
-//        //
-//        //{ counts: [5, 10, 25],
-//        //total: data.length,
-//        //    dataset: data
-//        //});
 }
 })();

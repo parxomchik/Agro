@@ -12,3 +12,4 @@ dist/
 *.iml
 out
 gen
+sql/run.sh

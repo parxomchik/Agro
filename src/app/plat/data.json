@@ -6,7 +6,8 @@
       "dateOfRegistration": "Moroni",
       "reason": "Moroni",
       "propertyOfPropertyLaw": "Moroni",
-      "personOfPropertyLaw": "Moroni"
+      "personOfPropertyLaw": "Moroni",
+      "isSelected": true
     },
     {
       "cadastrNumber": 111,
