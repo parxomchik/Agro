@@ -39,6 +39,7 @@ function browserSyncInit(baseDir, browser) {
     startPath: '/',
     server: server,
     browser: browser
+    //middleware: [server.middleware]
   });
 }
 
