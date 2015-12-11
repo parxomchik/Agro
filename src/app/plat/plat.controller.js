@@ -14,6 +14,7 @@ function platController($log,platFactory,NgTableParams,ngTableParams,$scope,$fil
     vm.showPtals = function(ptalsData){
         var res = [];
         $log.debug('showPtals = '+angular.toJson(ptalsData));
+
         angular.forEach(ptalsData,function(value1, key1){
             $log.debug('value = '+angular.toJson(value1),'key ='+key1);
             angular.forEach(value1, function (value2, key2) {
