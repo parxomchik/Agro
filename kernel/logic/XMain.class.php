@@ -18,7 +18,7 @@ class logic_XMain extends XObject {
         $result = array();
         {
             /* @var $entity entity_XFormEntity */
-            $entity = $app->EntityCache->getEntity("XForm", '', array(), READ_MODE, COMMONENTITY );
+            $entity = $app->EntityCache->getEntity("XForm", '', array("a"=>1), READ_MODE, COMMONENTITY );
             $entity->key = 'login';
             $entity->type = 'input';
             $entity->templateOptions->type = 'text';
@@ -28,13 +28,13 @@ class logic_XMain extends XObject {
         }
         {
             /* @var $entity entity_XFormEntity */
-            $entity = $app->EntityCache->getEntity("XForm", '', array(), READ_MODE, COMMONENTITY );
-            $entity->key = 'password';
-            $entity->type = 'input';
-            $entity->templateOptions->type = 'password';
-            $entity->templateOptions->label = 'Password';
-            $entity->templateOptions->placeholder = 'Enter login';
-            $result[] = $entity->GetJson();
+            $entity2 = $app->EntityCache->getEntity("XForm", '', array("a"=>2), READ_MODE, COMMONENTITY );
+            $entity2->key = 'password';
+            $entity2->type = 'input';
+            $entity2->templateOptions->type = 'password';
+            $entity2->templateOptions->label = 'Password';
+            $entity2->templateOptions->placeholder = 'Enter login';
+            $result[] = $entity2->GetJson();
         }
 
 
