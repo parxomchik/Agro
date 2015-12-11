@@ -37,18 +37,25 @@
 
         <!--</tr>-->
     <!--</table>-->
-    <p><strong>Page:</strong> {{plot.tableParams.page()}}</p>
-    <p><strong>Count per page:</strong> {{plot.tableParams.count()}}</p>
+    <p><strong>Сторінка:</strong> {{plot.tableParams.page()}}</p>
+    <p><strong>Кількість елементів на сторінці:</strong> {{plot.tableParams.count()}}</p>
+    <pre>
+        {{plot.tableParams.counts | json }}
+    </pre>
+    <!--<input type="number" class="form-control" placeholder="Кількість елементів на сторінці:" ng-model="plot.tableParams.count">-->
+
     <input type="text" class="form-control" placeholder="Пошук" ng-model="search">
     <table ng-table="plot.tableParams" class="table" show-filter="false" >
-        <tr ng-repeat="user in $data | filter:search">
+        <tr ng-repeat="user in $data | filter:search" ng-class="{'active':user.isSelected == true}">
 
             <!--<td data-title="'Name'"  sortable="'name'">{{user.name}}</td>-->
             <!--<td data-title="'Age'"  sortable="'age'">{{user.age}}</td>-->
+            <td width="40" style="text-align: left" >
+                <input type="checkbox" ng-model="user.isSelected" />
+            </td>
 
 
-
-            <td title="'Кадастровий №'" filter="{ cadastrNumber: 'number'}" sortable="'cadastrNumber'">
+            <td title="'Кадастровий №'" filter="{ cadastrNumber: 'number'}" sortable="'cadastrNumber'" >
             {{user.cadastrNumber}}
             </td>
 
@@ -84,7 +91,11 @@
 
         </tr>
     </table>
+    <button class="btn btn-success center-block" ng-click="plot.showPtals(plot.tableParams.data)">Показати на карті вибране</button>
 
 
 
+    <pre>
+        {{plot.tableParams.count()| json}}
+    </pre>
 </div>
