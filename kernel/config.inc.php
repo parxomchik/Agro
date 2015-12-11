@@ -52,6 +52,7 @@ else
 // ================================================================
 
 $dbms = 'postgres7';
+$dbms = 'mysql';
 $db_host = 'localhost';
 $dbname = 'agro';
 $dbuser = 'agro';
