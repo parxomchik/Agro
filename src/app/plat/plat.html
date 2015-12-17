@@ -1,7 +1,8 @@
 <acme-navbar></acme-navbar>
 <div class="container-fluid" >
         <button type="button" id="platAddData" class="btn btn-success" ng-click="plat.addData()">Додати ділянку</button>
+        <button class="btn btn-success m-b-20 pull-right" ng-click ="plat.saveChangedPlats()">Зберегти зміни</button>
+
     <div ui-grid="plat.gridOptions1" ui-grid-pagination ui-grid-selection ui-grid-edit ui-grid-auto-resize ng-style="plat.getTableHeight()" class="grid"></div>
     <button class="btn btn-primary m-t-20" ng-click ="plat.showPlats()">Показати вибране на карті</button>
-
 </div>

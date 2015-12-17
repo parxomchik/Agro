@@ -1,4 +1,8 @@
+
+
 url: api/plat
+
+Инициализация
 
 received_data:
 [
@@ -32,6 +36,43 @@ received_data:
   ]
 
 
+Отправка только выбраных участков на отрисовку на карте
+
+url: api/plat/show-map
+method: post
+
+sent_data:[
+              {
+                "cadastrNumber": 111,
+                "area": 121,
+                "propertyLaw": "Moroni",
+                "dateOfRegistration": "Moroni",
+                "reason": "Moroni",
+                "propertyOfPropertyLaw": "Moroni",
+                "personOfPropertyLaw": "Moroni"
+              },
+              {
+                "cadastrNumber": 111,
+                "area": 122,
+                "propertyLaw": "Moroni",
+                "dateOfRegistration": "Moroni",
+                "reason": "Moroni",
+                "propertyOfPropertyLaw": "Moroni",
+                "personOfPropertyLaw": "Moroni"
+              },
+              {
+                "cadastrNumber": 111,
+                "area": 123,
+                "propertyLaw": "Moroni",
+                "dateOfRegistration": "Moroni",
+                "reason": "Moroni",
+                "propertyOfPropertyLaw": "Moroni",
+                "personOfPropertyLaw": "Moroni"
+              }
+            ]
+
+
+      Сохранение измененных участков на карте
 
 url: api/plat
 method: post

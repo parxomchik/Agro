@@ -27,7 +27,6 @@ function platController($log,platFactory) {
             .success(function(result){
             $log.debug('platFactory.sendPlat result = '+result);
         });
-
     };
 
 
@@ -69,6 +68,13 @@ function platController($log,platFactory) {
             "propertyOfPropertyLaw": "Moroni2",
             "personOfPropertyLaw": "Moroni2"
         });
+    };
+    vm.saveChangedPlats = function() {
+        $log.debug('saveChangedPlats = '+angular.toJson(vm.gridOptions1.data));
+        platFactory.savePlat(vm.gridOptions1.data)
+            .success(function(result){
+                $log.debug('platFactory.sevePlat result = '+result);
+            });
     };
 
     vm.deleteRow = function(row) {

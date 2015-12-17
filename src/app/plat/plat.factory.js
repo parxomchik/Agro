@@ -32,7 +32,17 @@
                     }
                 });
             },
-            sendPlat: function (saveData) {
+            sendPlat: function (sendData) {
+                return $http({
+                  method: "POST",
+                  url: restConfig.url+'plat/show-map',
+                  headers:{
+                    'Content-Type': "application/x-www-form-urlencoded;charset=utf-8"
+                  },
+                  data:sendData
+                });
+            },
+            savePlat: function (saveData) {
                 return $http({
                   method: "POST",
                   url: restConfig.url+'plat',
@@ -41,7 +51,6 @@
                   },
                   data:saveData
                 });
-
             }
         };
     }
