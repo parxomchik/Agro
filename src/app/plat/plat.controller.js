@@ -15,8 +15,8 @@ function platController($log,platFactory) {
         .success(function (result) {
             $log.debug('ui-grid res = '+angular.toJson(result));
             vm.gridOptions1.data = result;
-            var clonedGridOptions1 = angular.copy(vm.gridOptions1.data);
-            $log.debug('clonedGridOptions1 = '+angular.toJson(clonedGridOptions1));
+             vm.clonedGridOptions1 = angular.copy(vm.gridOptions1.data);
+            $log.debug('vm.clonedGridOptions1 = '+angular.toJson(vm.clonedGridOptions1));
         });
 
 
@@ -77,6 +77,18 @@ function platController($log,platFactory) {
             });
     };
 
+    vm.cancelChangedPlats = function() {
+        alert(vm.clonedGridOptions1);
+        $log.debug('cancelChangedPlats = '+angular.toJson(vm.gridOptions1.data));
+        vm.gridOptions1.data = vm.clonedGridOptions1;
+
+
+        //platFactory.savePlat(vm.gridOptions1.data)
+        //    .success(function(result){
+        //        $log.debug('platFactory.sevePlat result = '+result);
+        //    });
+    };
+
     vm.deleteRow = function(row) {
         $log.debug('row = '+row);
         $log.debug('data = '+data);
@@ -90,10 +102,5 @@ function platController($log,platFactory) {
     //        height: (vm.gridOptions1.data.length * rowHeight + headerHeight) + "px"
     //    };
     //};
-
-
-
-
-
 }
 })();

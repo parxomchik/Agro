@@ -12,7 +12,6 @@
       'ui.router',
       'formly',
       'formlyBootstrap',
-      'ngTable',
       'ui.grid',
         'ui.grid.pagination',
         'ui.grid.selection',

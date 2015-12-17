@@ -1,8 +1,7 @@
+Инициализация
 
 
 url: api/plat
-
-Инициализация
 
 received_data:
 [
@@ -74,7 +73,9 @@ sent_data:[
 
       Сохранение измененных участков на карте
 
+
 url: api/plat
+
 method: post
 
 sent_data:[
