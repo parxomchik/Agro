@@ -13,7 +13,10 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
 // endbower
 @import "login/login";
 
-
+.myGrid {
+  width: 500px;
+  height: 250px;
+}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;

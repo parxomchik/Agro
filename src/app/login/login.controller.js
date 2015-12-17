@@ -61,6 +61,7 @@
             console.log('data = ' + angular.toJson(data));
               if(status == 200){
                 //$cookies.put('session_id',data.cookies);
+                  $log
               }
           })
           .error(function (data, status) {

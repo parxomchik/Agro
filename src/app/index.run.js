@@ -6,13 +6,11 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log,ngTableDefaults) {
+  function runBlock($log,i18nService) {
 
     $log.debug('runBlock end');
-    //function configureDefaults(ngTableDefaults) {
-      ngTableDefaults.params.count = 5;
-      ngTableDefaults.settings.counts = [];
-    //}
+    i18nService.setCurrentLang('ua');
+
   }
 
 })();
