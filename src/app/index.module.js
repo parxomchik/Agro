@@ -18,6 +18,7 @@
         'ui.grid.selection',
         'ui.grid',
         'ui.grid.edit',
+        'ui.grid.autoResize',
       'mgcrea.ngStrap'
     ]);
 })();
