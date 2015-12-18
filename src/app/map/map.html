@@ -33,6 +33,10 @@
                               editable="false" static="true" ng-cloak="" events="map.polyEvents">
 
             </ui-gmap-polygons>
+            <ui-gmap-window show="polywindow.show" coords="polywindow.coords" closeclick="polywindow.closeClick()">
+                <h1> {{polywindow.content}} </h1>
+            </ui-gmap-window>
+            <!--<ui-gmap-window coords="infoWindow.coords" show="infoWindow.show" options="infoWindow.options"></ui-gmap-window>-->
 
         </ui-gmap-google-map>
         <!--

@@ -9,6 +9,16 @@
   function mapController($scope, $log, uiGmapGoogleMapApi, $http,mapFactory) {
     //$log.currentLevel = $log.LEVELS.debug;
     var polyFillCtr = 0;
+    $scope.polywindow = {
+      closeClick: function(){
+        $scope.polywindow.show = false;
+      },
+      coords: {
+        latitude: 53,
+        longitude: 20
+      },
+      show: false
+    };
     $scope.map = {
       center: {
         latitude: 26.153215225012733,
@@ -63,18 +73,29 @@
         //}
         click: function (gPoly, eventName, polyModel) {
 
+          var bounds = new google.maps.LatLngBounds();
+          gPoly.getPath().forEach(function(latLng){bounds.extend(latLng)});
+          var gCenter = bounds.getCenter();
+          $scope.polywindow.coords = {
+            latitude:gCenter.lat(),
+            longitude:gCenter.lng()
+          };
+
+          $scope.polywindow.show = true;
+
+
           //alert($scope.map.polys);
           $log.debug(polyModel.id);
+          $scope.polywindow.content = polyModel.id;
+
+
           $log.debug(polyModel);
           //$log.debug(polyModel.geom.coordinates);
 
           $log.debug('gPoly = '+gPoly);
 
-
-          //window.alert("Poly Clicked: id:" + polyModel.$id + ' ' + JSON.stringify(polyModel.path));
         }
       },
-
       draw: undefined
     };
     var rawPolys = [];
