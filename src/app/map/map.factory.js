@@ -14,11 +14,10 @@
                     url: restConfig.url+'api/map'
                 })
             },
-            sendLogin: function (data) {
+            getMap2: function (data) {
                 return $http({
-                    method: 'POST',
-                    url: restConfig.url+'api/map',
-                    data: data
+                    method: 'GET',
+                    url: 'app/map/many_polygons.json'
                 })
             }
         }
