@@ -1,4 +1,7 @@
 (function () {
+    'use strict';
+
+
     angular.module('ui.grid').config(['$provide', function($provide) {
         $provide.decorator('i18nService', ['$delegate', function($delegate) {
             $delegate.add('ua', {

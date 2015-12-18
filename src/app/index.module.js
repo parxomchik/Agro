@@ -18,6 +18,8 @@
         'ui.grid',
         'ui.grid.edit',
         'ui.grid.autoResize',
+        'ngMap',
+        'uiGmapgoogle-maps',
       'mgcrea.ngStrap'
     ]);
 })();

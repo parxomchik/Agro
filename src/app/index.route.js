@@ -32,6 +32,13 @@
             controllerAs: 'plat'
             //parent: "client"
         })
+        .state('map', {
+            url: '/map',
+            templateUrl: 'app/map/map.html',
+            controller: 'mapController',
+            controllerAs: 'gm'
+            //parent: "client"
+        })
 
       $urlRouterProvider.otherwise('/');
       $logProvider.debugEnabled(true);

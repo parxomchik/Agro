@@ -17,7 +17,9 @@
     "angular-formly": "~7.3.7",
     "api-check": "~7.5.5",
     "angular-formly-templates-bootstrap": "~6.1.7",
-    "angular-ui-grid": "~3.0.7"
+    "angular-ui-grid": "~3.0.7",
+    "ngmap": "~1.15.4",
+    "angular-google-maps": "~2.2.1"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"
